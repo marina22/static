@@ -1,4 +1,4 @@
-Rails.Application.routes.draw do
+SampleApp::Application.routes.draw do
 
   get 'static_pages/home'
 

@@ -1,51 +1,23 @@
 require 'spec_helper'
 require 'capybara/rspec'
 
-describe "Static pages" do
-
-  describe "Home page" do
-
-    it "should have the content 'Sample App'" do
-      visit '/static_pages/home'
-      expect(page).to have_content('Sample App')
-    end
-
-    it "should have the title 'Home'" do
-      visit '/static_pages/home'
-      expect(page).to have_title("Ruby on Rails Tutorial Sample App | Home")
-    end
-    it "should not have a custom page title" do
-      visit '/static_pages/home'
-      expect(page).not_to have_title('| Home')
-    end
+feature "Static pages" do
+  scenario "Home page" do
+    visit '/static_pages/home'
+    expect(page).to have_content('Sample App')
+    expect(page).to have_title("Ruby on Rails Tutorial Sample App")
+    expect(page).not_to have_title('| Home')
   end
 
-  describe "Help page" do
-
-    it "should have the content 'Help'" do
-      visit '/static_pages/help'
-      expect(page).to have_content('Help')
-    end
-
-    it "should have the title 'Help'" do
-      visit '/static_pages/help'
-      expect(page).to have_title("Ruby on Rails Tutorial Sample App | Help")
-    end
+  scenario "Help page" do
+    visit '/static_pages/help'
+    expect(page).to have_content('Help')
+    expect(page).to have_title("Ruby on Rails Tutorial Sample App | Help")
   end
 
-  describe "About page" do
-
-    it "should have the content 'About Us'" do
-      visit '/static_pages/about'
-      expect(page).to have_content('About Us')
-    end
-
-    it "should have the title 'About Us'" do
-      visit '/static_pages/about'
-      expect(page).to have_title("Ruby on Rails Tutorial Sample App | About Us")
-    end
+  scenario "About page" do
+    visit '/static_pages/about'
+    expect(page).to have_content('About Us')
+    expect(page).to have_title("Ruby on Rails Tutorial Sample App | About Us")
   end
 end
-
-
-
