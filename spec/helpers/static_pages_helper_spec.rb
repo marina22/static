@@ -1,5 +1,7 @@
 require 'rails_helper'
 
+require 'capybara/rails'
+
 # Specs in this file have access to a helper object that includes
 # the StaticPagesHelper. For example:
 #
